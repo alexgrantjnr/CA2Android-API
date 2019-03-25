@@ -9,7 +9,7 @@ namespace CA2Service
     public class PlayerEntry
     {
 
-        //public int ID { get; set; } //PK -> Unique
+        public int ID { get; set; } //PK -> Unique
 
         [Required]
         [MinLength(1, ErrorMessage = "Forname Must be at least 1 Character!")] //

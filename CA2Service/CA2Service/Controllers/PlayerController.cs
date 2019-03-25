@@ -35,23 +35,28 @@ namespace CA2Service.Controllers
         [HttpGet("all")]
         public IEnumerable<PlayerEntry> GetAllEntries()
         {
-            var entries = players.OrderBy(p => p.FirstName);
+            var entries = _context.PlayerEntry.OrderBy(p => p.FirstName);
             return entries;
         }
 
         // GET api/name/Jack  Get player by name..
         [HttpGet("name/{name}")]
-        public IEnumerable<PlayerEntry> GetByForName(string name)
+        public IActionResult GetByForName(string name)
         {
-            var entry = players.Where(p => p.FirstName.ToUpper() == name.ToUpper());
-            return entry;
+            var entry = _context.PlayerEntry.Where(p => p.FirstName.ToUpper() == name.ToUpper());
+            if (entry == null)
+            {
+                return NotFound();
+            }
+            return Ok(entry);
+            //return entry;
         }
 
         // GET api/name/Jack  Get player by name..
         [HttpGet("name/surname/{name}/{surname}")]
         public IEnumerable<PlayerEntry> GetByFullNames(string name, string surname)
         {
-            var entry = players.Where(p => p.FirstName.ToUpper() == name.ToUpper() && p.LastName.ToUpper() == surname.ToUpper());
+            var entry = _context.PlayerEntry.Where(p => p.FirstName.ToUpper() == name.ToUpper() && p.LastName.ToUpper() == surname.ToUpper());
             return entry;
         }
 

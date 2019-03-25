@@ -41,8 +41,7 @@ namespace CA2Service
             });
 
             services.AddDbContext<PlayerContext>(options =>
-                  options.UseSqlServer(Configuration.GetConnectionString(@"Server=tcp:sportsserver.database.windows.net,1433;InitialCatalog=SportDB;PersistSecurityInfo=False;UserID=AlexBren;Password=Ali-g#Bren-dMultipleActiveResultSets=False;Encrypt=TrueTrustServerCertificate=False;ConnectionTimeout=30;")));
-
+                  options.UseSqlServer(Configuration.GetConnectionString("AzureConnection")));
 
             //*** SWAGGER Implementation *** // 
         }
