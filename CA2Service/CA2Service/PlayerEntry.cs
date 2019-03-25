@@ -10,7 +10,7 @@ namespace CA2Service
     {
 
         public int ID { get; set; } //PK -> Unique
-
+        
         [Required]
         [MinLength(1, ErrorMessage = "Forname Must be at least 1 Character!")] //
         [MaxLength(30, ErrorMessage = "Name out of Max-Length range!")]

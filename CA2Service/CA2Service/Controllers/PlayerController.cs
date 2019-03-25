@@ -12,7 +12,7 @@ namespace CA2Service.Controllers
     [ApiController]
     public class PlayerController : ControllerBase
     {
-        List<PlayerEntry> players; //List to hold players
+       // List<PlayerEntry> players; //List to hold players
 
         //Constructor generates list of players and their attributes
         /* public PlayerController()
@@ -31,19 +31,27 @@ namespace CA2Service.Controllers
             _context = context;
         }
 
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
         // GET all players..
         [HttpGet("all")]
-        public IEnumerable<PlayerEntry> GetAllEntries()
+        public IActionResult GetAllEntries()
         {
-            var entries = _context.PlayerEntry.OrderBy(p => p.FirstName);
-            return entries;
+            var entries = _context.Players.OrderBy(p => p.FirstName);
+            if (entries == null)
+            {
+                return NotFound();
+            }
+            return Ok(entries);
         }
 
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
         // GET api/name/Jack  Get player by name..
         [HttpGet("name/{name}")]
         public IActionResult GetByForName(string name)
         {
-            var entry = _context.PlayerEntry.Where(p => p.FirstName.ToUpper() == name.ToUpper());
+            var entry = _context.Players.Where(p => p.FirstName.ToUpper() == name.ToUpper());
             if (entry == null)
             {
                 return NotFound();
@@ -52,12 +60,18 @@ namespace CA2Service.Controllers
             //return entry;
         }
 
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
         // GET api/name/Jack  Get player by name..
         [HttpGet("name/surname/{name}/{surname}")]
-        public IEnumerable<PlayerEntry> GetByFullNames(string name, string surname)
+        public IActionResult GetByFullNames(string name, string surname)
         {
-            var entry = _context.PlayerEntry.Where(p => p.FirstName.ToUpper() == name.ToUpper() && p.LastName.ToUpper() == surname.ToUpper());
-            return entry;
+            var entry = _context.Players.Where(p => p.FirstName.ToUpper() == name.ToUpper() && p.LastName.ToUpper() == surname.ToUpper());
+            if (entry == null)
+            {
+                return NotFound();
+            }
+            return Ok(entry);
         }
 
         // GET api/values/5

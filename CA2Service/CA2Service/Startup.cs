@@ -29,9 +29,13 @@ namespace CA2Service
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc(); // SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddDbContext<PlayerContext>(options =>
+                  options.UseSqlServer(Configuration.GetConnectionString("AzureConnection")));
+            services.BuildServiceProvider().GetService<PlayerContext>().Database.Migrate();
 
+            //*** SWAGGER Implementation *** // 
             //*** SWAGGER Implementation *** //
 
             // Register the Swagger generator, defining one or more Swagger documents
@@ -39,11 +43,6 @@ namespace CA2Service
             {
                 c.SwaggerDoc("v1", new Info { Title = "Phonebook Client API", Version = "v1" });
             });
-
-            services.AddDbContext<PlayerContext>(options =>
-                  options.UseSqlServer(Configuration.GetConnectionString("AzureConnection")));
-
-            //*** SWAGGER Implementation *** // 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

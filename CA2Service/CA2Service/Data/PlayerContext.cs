@@ -13,6 +13,6 @@ namespace CA2Service.Data
         {
         }
 
-        public DbSet<CA2Service.PlayerEntry> PlayerEntry { get; set; }
+        public DbSet<CA2Service.PlayerEntry> Players { get; set; }
     }
 }

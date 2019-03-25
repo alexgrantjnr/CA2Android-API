@@ -31,3 +31,14 @@ C:\Users\alexg\Desktop\AndroidProject-CA2\FootballClubService\FootballClubServic
 C:\Users\alexg\Desktop\AndroidProject-CA2\FootballClubService\FootballClubService\obj\Debug\netcoreapp2.1\FootballClubService.AssemblyInfo.cs
 C:\Users\alexg\Desktop\AndroidProject-CA2\FootballClubService\FootballClubService\obj\Debug\netcoreapp2.1\FootballClubService.dll
 C:\Users\alexg\Desktop\AndroidProject-CA2\FootballClubService\FootballClubService\obj\Debug\netcoreapp2.1\FootballClubService.pdb
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\bin\Debug\netcoreapp2.1\FootballClubService.deps.json
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\bin\Debug\netcoreapp2.1\FootballClubService.runtimeconfig.json
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\bin\Debug\netcoreapp2.1\FootballClubService.runtimeconfig.dev.json
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\bin\Debug\netcoreapp2.1\FootballClubService.dll
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\bin\Debug\netcoreapp2.1\FootballClubService.pdb
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\obj\Debug\netcoreapp2.1\FootballClubService.csprojAssemblyReference.cache
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\obj\Debug\netcoreapp2.1\FootballClubService.csproj.CoreCompileInputs.cache
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\obj\Debug\netcoreapp2.1\FootballClubService.AssemblyInfoInputs.cache
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\obj\Debug\netcoreapp2.1\FootballClubService.AssemblyInfo.cs
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\obj\Debug\netcoreapp2.1\FootballClubService.dll
+C:\Users\alexg\Desktop\CA2Android-API\FootballClubService\FootballClubService\obj\Debug\netcoreapp2.1\FootballClubService.pdb
