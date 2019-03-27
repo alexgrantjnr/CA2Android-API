@@ -1,17 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CA2Service.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+
+
+/*
+ Developers:
+ Bren Dempsey & Alex Grant
+ 4th Year Software Students
+ EAD2 - CA2[Elapsed]
+ Out: 28/02/2019
+ Due: 31/03/2019
+*/
 
 using Swashbuckle.AspNetCore.Swagger; //Needed for Info object below using Swagger!!
 
@@ -31,18 +35,20 @@ namespace CA2Service
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            //DB context string maps to the applicationsettings
             services.AddDbContext<PlayerContext>(options =>
                   options.UseSqlServer(Configuration.GetConnectionString("AzureConnection")));
             services.BuildServiceProvider().GetService<PlayerContext>().Database.Migrate();
 
-            //*** SWAGGER Implementation *** // 
-            //*** SWAGGER Implementation *** //
+            //*** SWAGGER Implementation *** //            
 
             // Register the Swagger generator, defining one or more Swagger documents
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Phonebook Client API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "Football Legends API Service", Version = "v1" });
             });
+
+            //*** SWAGGER Implementation *** //
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,12 +71,12 @@ namespace CA2Service
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Phonebook Client API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Football Legends API V1");
             });
 
             //*** SWAGGER Implementation *** // 
 
-           // app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

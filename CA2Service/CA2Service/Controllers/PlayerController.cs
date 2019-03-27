@@ -1,19 +1,31 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using System.Threading.Tasks;*/
 using CA2Service.Data;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+//using Microsoft.AspNetCore.Mvc;
+
+/*
+ Developers:
+ Bren Dempsey & Alex Grant
+ 4th Year Software Students
+ EAD2 - CA2[Elapsed]
+ Out: 28/02/2019
+ Due: 31/03/2019
+*/
 
 namespace CA2Service.Controllers
 {
+   
     [Route("api/CA2Service")]
     [Produces("application/json")]
     [ApiController]
     public class PlayerController : ControllerBase
     {
-       // List<PlayerEntry> players; //List to hold players
-
+        // List<PlayerEntry> players; //List to hold players
+        //*** TEST DATA for Swagger ***
         //Constructor generates list of players and their attributes
         /* public PlayerController()
          {
@@ -24,79 +36,57 @@ namespace CA2Service.Controllers
              players.Add(new PlayerEntry() { FirstName = "Jack", LastName = "Charlton", Age = 68, Salary = 65000 });
          }*/
 
-        private readonly PlayerContext _context;
 
+        //Read-only attribute to specify the DBContext Connection
+        private readonly PlayerContext _connection; 
+
+        //Constructor sets the context
         public PlayerController(PlayerContext context)
         {
-            _context = context;
+            _connection = context;
         }
 
-        [ProducesResponseType(200)]
-        [ProducesResponseType(404)]
         // GET all players..
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]      
         [HttpGet("all")]
         public IActionResult GetAllEntries()
         {
-            var entries = _context.Players.OrderBy(p => p.FirstName);
+            var entries = _connection.Players.OrderBy(p => p.FirstName); //Order by name alphabetically
             if (entries == null)
             {
-                return NotFound();
+                return NotFound(); //Return err 400's
             }
-            return Ok(entries);
+            return Ok(entries); //Return OK 200's
         }
 
+        // Get player by firstname..
         [ProducesResponseType(200)]
-        [ProducesResponseType(404)]
-        // GET api/name/Jack  Get player by name..
+        [ProducesResponseType(404)]     
         [HttpGet("name/{name}")]
         public IActionResult GetByForName(string name)
         {
-            var entry = _context.Players.Where(p => p.FirstName.ToUpper() == name.ToUpper());
+            var entry = _connection.Players.Where(p => p.FirstName.ToUpper() == name.ToUpper()); //Camel casing
             if (entry == null)
             {
-                return NotFound();
+                return NotFound(); //Return err 400's
             }
-            return Ok(entry);
-            //return entry;
+            return Ok(entry); //Return OK 200's
         }
 
+        // Get player by full name..
         [ProducesResponseType(200)]
-        [ProducesResponseType(404)]
-        // GET api/name/Jack  Get player by name..
+        [ProducesResponseType(404)]       
         [HttpGet("name/surname/{name}/{surname}")]
         public IActionResult GetByFullNames(string name, string surname)
         {
-            var entry = _context.Players.Where(p => p.FirstName.ToUpper() == name.ToUpper() && p.LastName.ToUpper() == surname.ToUpper());
+            var entry = _connection.Players.Where(p => p.FirstName.ToUpper() 
+            == name.ToUpper() && p.LastName.ToUpper() == surname.ToUpper()); //Camel casing
             if (entry == null)
             {
-                return NotFound();
+                return NotFound(); //Return err 400's
             }
-            return Ok(entry);
-        }
-
-        // GET api/values/5
-        /*[HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }*/
+            return Ok(entry); //Return OK 200's
+        }       
     }
 }

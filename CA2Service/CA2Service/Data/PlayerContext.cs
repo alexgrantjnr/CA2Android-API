@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA2Service.Data
 {
+    //Database connection class
     public class PlayerContext : DbContext
     {
         public  PlayerContext (DbContextOptions<PlayerContext> options)
@@ -13,6 +14,7 @@ namespace CA2Service.Data
         {
         }
 
-        public DbSet<CA2Service.PlayerEntry> Players { get; set; }
+        //Get & Set property for the players in DB
+        public DbSet<PlayerEntry> Players { get; set; }
     }
 }
