@@ -10,17 +10,65 @@ namespace FootballClubService
         {
             using (PlayerContext db = new PlayerContext())
             {
+
                 try
                 {
                     //Add 3 Players, omit identity column vals..
-                    Player p1 = new Player() { FirstName = "Diego", LastName = "Maradona", Age = 52, Salary = 120000 };
-                    Player p2 = new Player() { FirstName = "Henrik", LastName = "Larssson", Age = 45, Salary = 110000 };
-                    Player p3 = new Player() { FirstName = "George", LastName = "Best", Age = 65, Salary = 150000 };
-                    Player p4 = new Player() { FirstName = "Jack", LastName = "Charlton", Age = 68, Salary = 65000 };
+                    Player p1 = new Player() { PhotoURL = "https://thesefootballtimes.co/wp-content/uploads/2017/03/maradona90-1400x927.jpg", FirstName = "Diego", LastName = "Maradona", Age = 52, Nationality = "Argentina", Position = "CAM" };
+                    Player p2 = new Player() { PhotoURL = "http://www.whoateallthepies.tv/wp-content/uploads/2017/07/henrik-larsson-celtic.png", FirstName = "Henrik", LastName = "Larsson", Age = 45, Nationality = "Sweden", Position = "ST" };
+                    Player p3 = new Player() { PhotoURL = "https://thesefootballtimes.co/wp-content/uploads/2015/07/Best10-1400x932.jpg", FirstName = "George", LastName = "Best", Age = 65, Nationality = "Northern Ireland", Position = "RW" };
+                    Player p4 = new Player() { PhotoURL = "http://autographshed.com/image/data/J%20Charlton%209%20QTY%201.jpg  ", FirstName = "Jack", LastName = "Charlton", Age = 68, Nationality = "England", Position = "CB"};
+                    Player p5 = new Player() { PhotoURL = "https://upload.wikimedia.org/wikipedia/it/4/4c/Paolo_Maldini_-_Milan_AC_1996-97.jpg", FirstName = "Paolo", LastName = "Maldini", Age = 50, Nationality = "Italy", Position = "CB" };
+                    Player p6 = new Player() { PhotoURL = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Ruud_Gullit_1988.jpg", FirstName = "Ruud", LastName = "Gullit", Age = 72, Nationality = "Holland", Position = "CF" };
+                    Player p7 = new Player() { PhotoURL = "https://www.icons.com/media/catalog/category/Ruud-van-Nistelrooy.png", FirstName = "Ruud", LastName = "van Nistelrooy", Age = 42, Nationality = "Holland", Position = "ST" };
+                    Player p8 = new Player() { PhotoURL = "http://3.bp.blogspot.com/-hWmkZdoKNrk/TVy96Ot0x5I/AAAAAAAAAAY/AJCSviNRuNY/s1600/rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr.jpg", FirstName = "Ronaldo", LastName = "NazÃ¡rio de Lima LuÃ­s", Age = 42, Nationality = "Brazil", Position = "ST" };
+
+
+                    Player p9 = new Player() { PhotoURL = "https://s.hs-data.com/bilder/spieler/gross/1676.jpg", FirstName = "Jay-Jay", LastName = "Okocha", Age = 45, Nationality = "Nigeria", Position = "RM" };
+                    Player p10 = new Player() { PhotoURL = "https://e1.365dm.com/16/11/768x432/schmeichel-man-utd-juventus_3843542.jpg?20161130205605", FirstName = "Peter", LastName = "Schmeichel", Age = 54, Nationality = "Denmark", Position = "GK" };
+                    Player p11 = new Player() { PhotoURL = "https://i.guim.co.uk/img/static/sys-images/Football/Clubs/Club_Home/2012/3/26/1332754578893/Alessandro-Del-Piero-008.jpg?width=620&quality=85&auto=format&fit=max&s=3016b2a2e974d67d8559ab6576f5dd37", FirstName = "Alessandro", LastName = "Del Piero", Age = 45, Nationality = "Italy", Position = "CF" };
+                    Player p12 = new Player() { PhotoURL = "http://coolspotters.com/files/photos/21230/dennis-bergkamp-profile.jpg?1357498822", FirstName = "Dennis", LastName = "Bergkamp", Age = 49, Nationality = "Holland", Position = "CF" };
+                    Player p13 = new Player() { PhotoURL = "https://media.gettyimages.com/photos/republic-of-irelands-roy-keane-during-the-european-qualifying-playoff-picture-id829133708", FirstName = "Roy", LastName = "Keane", Age = 47, Nationality = "Ireland", Position = "CDM" };
+                    Player p14 = new Player() { PhotoURL = "https://cdn.images.express.co.uk/img/dynamic/67/590x/Gianfranco-Zola-Chelsea-Transfer-740690.jpg", FirstName = "Gianfranco", LastName = "Zola", Age = 72, Nationality = "Italy", Position = "CF" };
+                    Player p15 = new Player() { PhotoURL = "https://s.hs-data.com/bilder/spieler/gross/1058.jpg", FirstName = "HernÃin", LastName = "Crespo", Age = 42, Nationality = "Argentina", Position = "ST" };
+                    Player p16 = new Player() { PhotoURL = "https://i.dailymail.co.uk/i/pix/2014/08/11/1407751309157_wps_11_PIC_ALAN_WALTER_for_Daily.jpg", FirstName = "Marc", LastName = "Overmars", Age = 45, Nationality = "Holland", Position = "LW" };
+
+                    Player p17 = new Player() { PhotoURL = "https://media.gettyimages.com/photos/jaschin-lew-fussballtorwart-sportfunktionaer-udssr-portrait-1966-picture-id537133619", FirstName = "Lev", LastName = "Yashin", Age = 88, Nationality = "Russia", Position = "GK" };
+                    Player p18 = new Player() { PhotoURL = "https://steemitimages.com/p/3W72119s5BjWMGm4Xa2MvD5AT2bJsSA8F9WeC71v1s1fKfGkK9mMKuc3LcvF4KigbWg9UsrpEPYxMeo964ykJBuzkdhEQ2Ge6AVaiDdb8rCt4aMZ9AdyFk?format=match&mode=fit&width=640", FirstName = "Ronaldinho", LastName = "de Assis Moreira Ronaldo", Age = 38, Nationality = "Brazil", Position = "CAM" };
+                    Player p19 = new Player() { PhotoURL = "https://arxiu.fcbarcelona.cat/web/thumbnails/199_150/Imatges/2010-2011/Futbol/primer_equip/plantilla/PUYOL.jpg", FirstName = "Carles", LastName = "Puyol Saforcada", Age = 41, Nationality = "Spain", Position = "CB" };
+                    Player p20 = new Player() { PhotoURL = "http://photos1.blogger.com/blogger/7157/2232/1600/Forza%20Cannavaro.jpg", FirstName = "Fabio", LastName = "Cannavaro", Age = 45, Nationality = "Italy", Position = "CB" };
+                    Player p21 = new Player() { PhotoURL = "https://www.famoussoccerplayers.org/images/alessandro-nesta.jpg", FirstName = "Alessandro", LastName = "Nesta", Age = 49, Nationality = "Italy", Position = "CB" };
+                    Player p22 = new Player() { PhotoURL = "https://tmssl.akamaized.net//images/portrait/header/4385-1495621412.jpg?lm=1495621429", FirstName = "Patrick", LastName = "Kluivert", Age = 42, Nationality = "Holland", Position = "ST" };
+                    Player p23 = new Player() { PhotoURL = "https://www.thetimes.co.uk/imageserver/image/methode%2Ftimes%2Fprod%2Fweb%2Fbin%2F277cea88-4857-11e8-bf76-d5da08923eed.jpg?crop=2612%2C1469%2C401%2C103&resize=685", FirstName = "Patrick", LastName = "Vieira", Age = 42, Nationality = "France", Position = "CM" };
+                    Player p24 = new Player() { PhotoURL = "http://thetopforward.com/uploads/0/09043276.jpg", FirstName = "Roberto", LastName = "Carlos Da Silva Junior", Age = 45, Nationality = "Brazil", Position = "LB" };
+                    Player p25 = new Player() { PhotoURL = "https://pbs.twimg.com/media/DQDn7BAXkAE_Zfg.jpg", FirstName = "Striker", LastName = "Dempsey", Age = 67, Nationality = "Ireland", Position = "ST" }; 
+
+
                     db.Players.Add(p1);
                     db.Players.Add(p2);
                     db.Players.Add(p3);
                     db.Players.Add(p4);
+                    db.Players.Add(p5);
+                    db.Players.Add(p6);
+                    db.Players.Add(p7);
+                    db.Players.Add(p8);
+                    db.Players.Add(p9);
+                    db.Players.Add(p10);
+                    db.Players.Add(p11);
+                    db.Players.Add(p12);
+                    db.Players.Add(p13);
+                    db.Players.Add(p14);
+                    db.Players.Add(p15);
+                    db.Players.Add(p16);
+                    db.Players.Add(p17);
+                    db.Players.Add(p18);
+                    db.Players.Add(p19);
+                    db.Players.Add(p20);
+                    db.Players.Add(p21);
+                    db.Players.Add(p22);
+                    db.Players.Add(p23);
+                    db.Players.Add(p24);
+                    db.Players.Add(p25);
                     db.SaveChanges();
                 }
                 catch (Exception e)
@@ -46,7 +94,7 @@ namespace FootballClubService
         }*/
         static void Main()
         {           
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello Legends!");
 
             Add();
             //ReturnAllPlayers();

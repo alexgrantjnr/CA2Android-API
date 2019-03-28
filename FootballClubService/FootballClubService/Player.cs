@@ -16,21 +16,35 @@ namespace FootballClubService
     {
         public int ID { get; set; } //PK -> Unique
 
+        //[Required]
+        public string PhotoURL { get; set; }
+
         [Required]
-        [MinLength(1, ErrorMessage = "Ask MA Bolox")] //"Forname Must be at least 1 Character!"
+        [MinLength(1, ErrorMessage = "Forname Must be at least 1 Character")] //"Forname Must be at least 1 Character!"
         [MaxLength(30, ErrorMessage = "Name out of Max-Length range!")]
         public string FirstName { get; set; }
+
         [Required]
         [MinLength(1, ErrorMessage = "Surname Must be at least 1 Character!")]
         [MaxLength(30, ErrorMessage = "Name out of Max-Length range!")]
         public string LastName { get; set; }
+
         [Required]
         //public DateTime DateOfBirth { get; set; }   //Player's age
         [Range(5,50)]
         public int Age { get; set; }   //Player's age
-        //Possible calculation to get the Player's age here
+
+        //Possible calculation to get the Player's age 
         [Required]
-        public double Salary { get; set; }
+        [MinLength(3, ErrorMessage = "Nationality Must be at least 1 Character")] //"nationality Must be at least 1 Character!"
+        [MaxLength(30, ErrorMessage = "Name out of Max-Length range!")]
+        public string Nationality { set; get; }
+
+        [Required]
+        [MinLength(2, ErrorMessage = "Position Must be at least 1 Character")] //"nationality Must be at least 1 Character!"
+        [MaxLength(3, ErrorMessage = "Position out of Max-Length range!")]
+        public string Position { set; get; }
+
 
         /*
             [ GoalsScored, YellowCards, RedCards, Contract(Years) ]

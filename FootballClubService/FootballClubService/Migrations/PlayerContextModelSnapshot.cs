@@ -34,7 +34,15 @@ namespace FootballClubService.Migrations
                         .IsRequired()
                         .HasMaxLength(30);
 
-                    b.Property<double>("Salary");
+                    b.Property<string>("Nationality")
+                        .IsRequired()
+                        .HasMaxLength(30);
+
+                    b.Property<string>("PhotoURL");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasMaxLength(3);
 
                     b.HasKey("ID");
 

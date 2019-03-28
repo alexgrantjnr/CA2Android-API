@@ -5,6 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>CA2Service</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>FootballLegends-APP - Web Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>FootballLegends - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

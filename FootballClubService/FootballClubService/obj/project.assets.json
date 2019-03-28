@@ -3585,11 +3585,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alex Grant\\Desktop\\AndroidProject-CA2\\FootballLegendsDB\\FootballClubService\\FootballClubService.csproj",
+      "projectUniqueName": "C:\\Users\\Alex Grant\\Desktop\\CA2Android-API\\FootballClubService\\FootballClubService\\FootballClubService.csproj",
       "projectName": "FootballClubService",
-      "projectPath": "C:\\Users\\Alex Grant\\Desktop\\AndroidProject-CA2\\FootballLegendsDB\\FootballClubService\\FootballClubService.csproj",
+      "projectPath": "C:\\Users\\Alex Grant\\Desktop\\CA2Android-API\\FootballClubService\\FootballClubService\\FootballClubService.csproj",
       "packagesPath": "C:\\Users\\Alex Grant\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alex Grant\\Desktop\\AndroidProject-CA2\\FootballLegendsDB\\FootballClubService\\obj\\",
+      "outputPath": "C:\\Users\\Alex Grant\\Desktop\\CA2Android-API\\FootballClubService\\FootballClubService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
