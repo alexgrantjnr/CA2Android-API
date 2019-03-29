@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import { HttpClient } from  '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { LandingPage } from '../landing/landing';
 import { RestApiProvider } from '../../providers/rest-api/rest-api';
-import { SearchPage } from '../search/search';
-//import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'page-home',
@@ -11,38 +11,44 @@ import { SearchPage } from '../search/search';
 })
 export class HomePage {
 
-  players: string[];
   errorMessage: string; 
-  //json: any;
-  //players: any = [];
-  //players: any;
-
-  descending: boolean = false;
+  descending: boolean = true;
   order: number;
   column: string = 'firstName';
 
+  //Players arry to hold json object
+   players: string[];
+
   constructor(public navCtrl: NavController, 
-    public rest: RestApiProvider) { }
+    public navParams: NavParams, 
+    private httpClient: HttpClient,
+    public rest: RestApiProvider) {      
+  }
 
-    getPlayers() {
-      this.rest.getPlayers()
-         .subscribe(
-           players => this.players = players,
-           error =>  this.errorMessage = <any>error);
-    }
+  //Method to fill players array 
+  getPlayers() {
+    this.rest.getPlayers()
+       .subscribe(
+         players => this.players = players,
+         error =>  this.errorMessage = <any>error);
+         console.log(this.players);
+  }
 
-    ionViewDidLoad() {
-      this.getPlayers();
-      console.log(this.players);
-    }
+  goToHome(){
+    this.navCtrl.setRoot(LandingPage);
+  }
 
-    sort(){
-      this.descending = !this.descending;
-      this.order = this.descending ? 1 : -1;
-    }
+  //Load players when page loades 
+  ionViewDidLoad() {
+    this.getPlayers();
+    console.log(this.players);
+  }
 
-    find()
-    {
-      this.navCtrl.push(SearchPage);
-    }
+  //Sort in accending order
+  sort(){
+    this.descending = !this.descending;
+    this.order = this.descending ? 1 : -1;
+  }
+
+ 
 }

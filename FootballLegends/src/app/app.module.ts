@@ -7,40 +7,54 @@ import { SearchPipe } from '../pipes/search/search';
 import { SortPipe } from '../pipes/sort/sort';
 
 //Import to access a HTTP GET Request
-import { HttpClientModule } from  '@angular/common/http';
-import { HttpModule } from '@angular/http';
-
+import { HttpClientModule , HttpClient} from  '@angular/common/http';
+import { HttpModule, Http } from '@angular/http';
+import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RestApiProvider } from '../providers/rest-api/rest-api';
-import { SearchPage } from '../pages/search/search';
+import { LandingPage } from '../pages/landing/landing';
+import { LanguageProvider } from '../providers/language/language';
 
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  }
+  
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     SearchPipe,
-    SearchPage,
-    SortPipe
+    SortPipe,
+    LandingPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,    
     HttpModule,  
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    TranslateModule.forRoot({
+      loader: {
+           provide: TranslateLoader,
+           useFactory: (createTranslateLoader),
+           deps: [HttpClient]
+         }
+      })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    SearchPage
+    LandingPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestApiProvider
+    RestApiProvider,
+    LanguageProvider
   ]
 })
 export class AppModule {}
