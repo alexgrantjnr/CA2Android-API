@@ -1,5 +1,6 @@
-  <ion-header>
-      <ion-navbar color="danger">
+
+      <ion-header>
+      <ion-navbar color="danger" text-center>
         <ion-title text-center>{{'WELCOME' | translate}}</ion-title>
       </ion-navbar>
     </ion-header>
@@ -8,15 +9,16 @@
 
         <ion-list no-lines>
             <ion-item>
-              <ion-label>{{'SELECT LANGUAGE' | translate}}</ion-label>
+              <ion-label>{{'SELECT_LANGUAGE' | translate}}</ion-label>
               <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [cancelText]="'CANCEL' | translate">
                 <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name}}</ion-option>
               </ion-select>
             </ion-item>
           </ion-list>
-      
+    
       <div id="main">
           <ion-list text-center>
+              <img src='../../assets/imgs/legends-logo.png' class="logo">      
     
               <div class="container">
                   <img src='../../assets/imgs/legendsBan1.jpg'>    
@@ -32,12 +34,8 @@
       
     </ion-content>
     
-    <ion-footer id="footer">
-        <p class="pTxt"><b>{{'FOOTER_P1' | translate}}</b></p>
-        <p>{{'FOOTER_P2' | translate}}</p>
-        <br>
+    <ion-footer id="footer">    
         <p>{{'FOOTER_P3' | translate}}</p>
         <p><span>&copy;2019 Dempsey & Grant </span></p>
     </ion-footer>
     
-  

@@ -11,6 +11,7 @@
     "HE_LEGEND" : "Él es una leyenda.",
     "FOOTER_P1" : "Aplicación de Leyendas - Servicio Web RESTful API 4to año",
     "FOOTER_P2": "EAD2-CA2 [Elapsed] Profesor: Gary Clynch",
-    "FOOTER_P3": "Desarrolladores: Bren Dempsey & Alex Grant"
+    "FOOTER_P3": "Desarrolladores: Bren Dempsey & Alex Grant",
+    "SELECT_LANGUAGE": "Seleccione el idioma"
 }
 
