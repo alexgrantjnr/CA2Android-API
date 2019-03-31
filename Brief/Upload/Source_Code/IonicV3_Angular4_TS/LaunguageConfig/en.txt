@@ -1,0 +1,16 @@
+{
+"LEGENDS": "Legends", 		
+"NATIONALITY": "Nationality",	
+"POSITION": "Position",	
+"AGE": "Age",
+"WELCOME": "Welcome",
+"WELCOME_SENTENCE": "Welcome to the Football Legends App. An App designed to browse and view some of history's greatest players of the beautiful game.",
+"SHOW_LEGENDS": "Show Legends",
+"LEGENDS_GAME": "Legends of the game",
+"LEGENDS_QUOTE" : "A phrase that means something to the people. The word Legend is reserved only for the special few who truly earn the status. It’s not just about natural talent and technical gifts. Of course, they’re both qualities that the true greats have in abundance, but winning the hearts and winning the respect of fans is more important than any trophy anyday.",
+"HE_LEGAND": "He's a legend",
+"FOOTER_P1": "Legends App - 4th Year API RESTful Web Service",
+"FOOTER_P2": "EAD2-CA2 [Elapsed] Lecturer: Gary Clynch",
+"FOOTER_P3": "Developers: Bren Dempsey & Alex Grant",
+"SELECT_LANGUAGE": "Select Language"
+}

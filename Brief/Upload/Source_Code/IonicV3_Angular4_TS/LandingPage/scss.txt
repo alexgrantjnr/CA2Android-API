@@ -1,0 +1,39 @@
+page-landing {
+
+    .logo{
+        width: 28vh;
+        margin-top: -15%;
+    }
+
+    /*#btnMove{
+        //background-color: rgb(39, 38, 38);       
+    }*/
+
+    #main{
+        margin-bottom: 20px;
+        margin-top: 10px;
+    }
+
+    .container{        
+        width: 100%;       
+    }  
+
+    #footer{
+        background-color: #fff;
+        //background-color: #404040; 
+        border-top: solid 2px lightgray;                  
+        padding: 1em; 
+
+        //Nesting footer-style
+        p{
+            //color: #e0cece;
+            color: rgb(105, 102, 102);
+            text-align: center; 
+            font-size: 11px;
+
+            span{
+                font-size: 10px;
+            }          
+        }        
+    }   
+}

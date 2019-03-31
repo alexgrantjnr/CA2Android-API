@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar color="danger" text-center>
+    <ion-title>
+        <ion-icon name="home" (click)='goToHome()'></ion-icon>
+        {{'LEGENDS_GAME' | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding> 
+  
+  <ion-item>
+      <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+      <button ion-button round medium outline color="dark" (click)="sort()">Sort Players</button>
+    </ion-item>
+
+  <ion-list>
+      <ion-card  *ngFor='let player of players | search : terms'>
+        <ion-card-header>
+        <ion-card-title text-center><b>{{player.firstName}} {{player.lastName}}</b> 
+          </ion-card-title>
+        </ion-card-header>      
+        <ion-card-content>  
+            <img src='{{player.photoURL}}'>
+            <h2 text-center class="pad2"><b>Player Statistics</b></h2>          
+            <ion-item> 
+              <img src='../../assets/imgs/football1.jpg' class="ball">             
+              <h2><b>{{'NATIONALITY' | translate}} </b>{{player.nationality}}</h2>
+              <h3><b>{{'POSITION' | translate}} </b>{{player.position}}</h3>
+              <h5><b>{{'AGE' | translate}} </b>{{player.age}}</h5>
+            </ion-item>
+            
+            <br><p text-justify><b>"{{'HE_LEGEND' | translate}}"</b><br><br>
+              {{'LEGENDS_QUOTE' | translate}}</p>
+        </ion-card-content>
+      </ion-card>
+  </ion-list>
+
+</ion-content>

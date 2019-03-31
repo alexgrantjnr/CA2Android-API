@@ -1,0 +1,39 @@
+ <ion-header>
+      <ion-navbar color="danger" text-center>
+        <ion-title text-center>{{'WELCOME' | translate}}</ion-title>
+      </ion-navbar>
+ </ion-header>
+    
+    <ion-content padding>
+
+        <ion-list no-lines>
+            <ion-item>
+              <ion-label>{{'SELECT_LANGUAGE' | translate}}</ion-label>
+              <ion-select [(ngModel)]="languageSelected" (ionChange)='setLanguage()' [cancelText]="'CANCEL' | translate">
+                <ion-option *ngFor="let item of languages" [value]="item.code">{{item.name}}</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+    
+      <div id="main">
+          <ion-list text-center>
+              <img src='../../assets/imgs/legends-logo.png' class="logo">      
+    
+              <div class="container">
+                  <img src='../../assets/imgs/legendsBan1.jpg'>    
+              </div>  
+    
+              <p style="align-content: center">{{'WELCOME_SENTENCE' | translate}}
+              </p>   
+          
+              <button ion-button block color="danger" id="btnMove" (click)='goToPlayerList()'>{{'SHOW_LEGENDS' | translate}}</button>                    
+    
+          </ion-list> 
+      </div>  
+      
+    </ion-content>
+    
+  <ion-footer id="footer">    
+        <p>{{'FOOTER_P3' | translate}}</p>
+        <p><span>&copy;2019 Dempsey & Grant </span></p>
+  </ion-footer>

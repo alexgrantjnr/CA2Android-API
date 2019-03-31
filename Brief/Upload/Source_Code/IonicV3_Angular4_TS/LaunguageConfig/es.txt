@@ -1,0 +1,16 @@
+{
+    "LEGENDS": "Leyendas", 	
+    "NATIONALITY": "Nacionalidad",	
+    "POSITION": "Posición",	
+    "AGE": "Años",
+    "WELCOME": "Bienvenido",
+    "WELCOME_SENTENCE": "Bienvenido a la aplicación Football Legends. Una aplicación diseñada para explorar y ver algunos de los mejores jugadores de la historia del hermoso juego.",
+    "SHOW_LEGENDS": "Mostrar leyendas",
+    "LEGENDS_GAME": "Leyendas del juego",
+    "LEGENDS_QUOTE": "Una frase que significa algo para la gente. La palabra Leyenda está reservada solo para los pocos que realmente obtienen el estatus. No se trata solo de talento natural y dones técnicos. De ambas son cualidades que los verdaderos grandes tienen en abundancia, pero ganarse y ganarse el respeto de los fanáticos es más importante que cualquier trofeo.",
+    "HE_LEGEND" : "Él es una leyenda.",
+    "FOOTER_P1" : "Aplicación de Leyendas - Servicio Web RESTful API 4to año",
+    "FOOTER_P2": "EAD2-CA2 [Elapsed] Profesor: Gary Clynch",
+    "FOOTER_P3": "Desarrolladores: Bren Dempsey & Alex Grant",
+    "SELECT_LANGUAGE": "Seleccione el idioma"
+}
