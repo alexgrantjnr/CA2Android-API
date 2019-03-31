@@ -11,7 +11,7 @@
   
   <ion-item>
       <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
-      <button ion-button round medium outline color="dark" (click)="sort()">Sort Players</button>
+   
     </ion-item>
 
   <ion-list>
@@ -25,9 +25,9 @@
             <h2 text-center class="pad2"><b>Player Statistics</b></h2>          
             <ion-item> 
               <img src='../../assets/imgs/football1.jpg' class="ball">             
-              <h2><b>{{'NATIONALITY' | translate}} </b>{{player.nationality}}</h2>
-              <h3><b>{{'POSITION' | translate}} </b>{{player.position}}</h3>
-              <h5><b>{{'AGE' | translate}} </b>{{player.age}}</h5>
+              <h2><b>{{'NATIONALITY' | translate}}: </b>{{player.nationality}}</h2>
+              <h3><b>{{'POSITION' | translate}}: </b>{{player.position}}</h3>
+              <h5><b>{{'AGE' | translate}}: </b>{{player.age}}</h5>
             </ion-item>
             
             <br><p text-justify><b>"{{'HE_LEGEND' | translate}}"</b><br><br>
